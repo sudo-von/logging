@@ -1,0 +1,20 @@
+{
+  "name": "@sudo-von/logging",
+  "version": "0.0.0",
+  "description": "Provides a lightweight and reusable logging service for managing logs based on the environment.",
+  "keywords": [
+    "@sudo-von",
+    "logging"
+  ],
+  "homepage": "https://github.com/sudo-von/logging#readme",
+  "bugs": {
+    "url": "https://github.com/sudo-von/logging/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudo-von/logging.git"
+  },
+  "author": "Jesús Ángel Rodríguez Martínez",
+  "scripts": {},
+  "dependencies": {}
+}
