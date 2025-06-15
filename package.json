@@ -14,6 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/sudo-von/logging.git"
   },
+  "license": "MIT",
   "author": "Jesús Ángel Rodríguez Martínez",
   "scripts": {},
   "dependencies": {}
