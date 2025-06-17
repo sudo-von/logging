@@ -1,6 +1,6 @@
 {
   "name": "@sudo-von/logging",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Provides a lightweight and reusable logging service for managing logs based on the environment.",
   "keywords": [
     "@sudo-von",
