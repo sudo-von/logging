@@ -65,12 +65,14 @@ npm test
 ## 📁 Project Structure
 
 ```bash
-├── abstracts                # Factory and service abstract classes
-├── service.ts               # Pino-based implementation
-├── factory.ts               # Factory for instantiation
-├── types.ts                 # Type definitions
-├── constant.ts              # Default icon mappings
-└── service.unit.test.ts     # Unit tests
+├── abstracts.ts                # Abstract class and base definition
+├── constant.ts                 # Default icon mappings
+├── factory.ts                  # Factory for instantiation
+├── index.ts                    # Entry point for the package
+└── service.integration.test.ts # Integration tests for service
+├── service.ts                  # Core service implementation
+└── service.unit.test.ts        # Unit tests for service
+├── types.ts                    # Type definitions
 ```
 
 ## 🔐 ESM Compatibility
