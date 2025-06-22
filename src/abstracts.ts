@@ -4,6 +4,9 @@ import { MethodNotImplementedYetError } from "@sudo-von/core";
 /**
  * Abstract base class for logging services.
  *
+ * Acts as a **Facade** over third-party logging libraries,
+ * exposing a simplified and uniform interface for structured logging across different log levels.
+ *
  * Provides a consistent interface for structured logging across different log levels.
  * Intended to be extended by concrete logger implementations (e.g., using Pino, Winston, etc.).
  */
@@ -15,9 +18,7 @@ export abstract class AbstractLoggerService {
    *
    * @throws MethodNotImplementedYetError Always throws to prevent direct instantiation.
    */
-  protected constructor(_configuration: ILoggerConfiguration) {
-    throw new MethodNotImplementedYetError("constructor");
-  }
+  protected constructor(_configuration: ILoggerConfiguration) {}
 
   /**
    * Logs a message at the `debug` level.
@@ -99,14 +100,14 @@ export abstract class AbstractLoggerService {
  * Abstract base class for creating logger service instances.
  *
  * This factory defines a static `create` method contract for returning
- * an `ILoggerService` implementation, scoped to a specific module or file.
+ * an `ILoggerService` implementation, scoped to a specific file.
  *
  * Concrete factories are expected to handle configuration, formatting,
  * transports, and other implementation details.
  */
 export abstract class AbstractLoggerFactory {
   /**
-   * Creates and returns a logger service instance scoped to a specific module.
+   * Creates and returns a logger service instance scoped to a specific file.
    *
    * Implementations should ensure the logger is properly configured with
    * icons, levels, and transports.

@@ -1,21 +1,22 @@
-import Module from "module";
-
 /**
  * Defines the complete configuration for the logger system.
  */
 export interface ILoggerConfiguration {
   /**
-   * Icons used to visually represent each log level.
+   * Optional set of icons used to visually represent each log level in log messages.
+   *
+   * If not provided, default icons will be used
    */
-  icons: LoggerIcons;
+  icons?: LoggerIcons;
 
   /**
-   * The Node.js module where the logger is being used.
+   * The Node.js file where the logger is being used.
    */
-  module: LoggerModule;
+  filename: string;
 
   /**
    * Minimum level to log.
+   *
    * All messages of this level and **higher severity** will be output.
    */
   level: LoggerLevel;
@@ -43,11 +44,6 @@ export type LoggerLevel =
   | "warn"
   | "error"
   | "fatal";
-
-/**
- * The module object from Node.js used to identify the calling context.
- */
-export type LoggerModule = Module;
 
 /**
  * Generic metadata that can be attached to log entries.

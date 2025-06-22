@@ -7,6 +7,7 @@ import {
   Metadata,
 } from "./types";
 import { AbstractLoggerService } from "./abstracts";
+import { DEFAULT_ICONS } from "./constant";
 
 export class LoggerService extends AbstractLoggerService {
   private icons: LoggerIcons;
@@ -16,7 +17,7 @@ export class LoggerService extends AbstractLoggerService {
     super(configuration);
 
     this.logger = pino({
-      base: { app: configuration.module.filename },
+      base: { app: configuration.filename },
       level: configuration.level,
       transport: {
         target: "pino-pretty",
@@ -31,7 +32,7 @@ export class LoggerService extends AbstractLoggerService {
       },
     });
 
-    this.icons = configuration.icons;
+    this.icons = configuration.icons || DEFAULT_ICONS;
   }
 
   public debug(message: string, metadata?: Metadata): void {
@@ -42,13 +43,13 @@ export class LoggerService extends AbstractLoggerService {
   public error(error: Error): void {
     const metadata: Metadata = { stack: error.stack };
     const formattedMessage = this.format("error", error.message, metadata);
-    this.logger.error(formattedMessage, { error });
+    this.logger.error(error, formattedMessage);
   }
 
   public fatal(error: Error): void {
     const metadata: Metadata = { stack: error.stack };
     const formattedMessage = this.format("fatal", error.message, metadata);
-    this.logger.fatal(formattedMessage, { error });
+    this.logger.fatal(error, formattedMessage);
   }
 
   protected format(
