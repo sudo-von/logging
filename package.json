@@ -23,8 +23,6 @@
     "build": "npm run start:clean && npm run start:build",
     "start:build": "tsc",
     "start:clean": "rimraf dist",
-    "start:integration-test": "npm run start:test -- --testMatch '**/*.integration.test.ts'",
-    "start:integration-test:coverage": "npm run start:test -- --coverage --testMatch '**/*.integration.test.ts'",
     "start:test": "node --experimental-vm-modules node_modules/.bin/jest",
     "start:unit-test": "npm run start:test -- --testMatch '**/*.unit.test.ts'",
     "start:unit-test:coverage": "npm run start:test -- --coverage --testMatch '**/*.unit.test.ts'",
